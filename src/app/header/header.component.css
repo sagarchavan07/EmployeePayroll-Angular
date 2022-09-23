@@ -1,0 +1,29 @@
+.header-content{
+    margin-top: 0px;
+    margin-left: 0px;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    width: 81.25%;
+    margin: 0 auto 0;
+}
+
+.logo-conten{
+    border: 1px solid #42515F;
+}
+img{
+    margin-top: 5px;
+}
+
+.emp-text{
+    font: normal normal bold 20px/25px montserrat;
+    font-family: "montserrat", sans-serif;
+    margin-left: 5px;
+    letter-spacing: 0px;
+    color: #82a70c;
+    text-transform:  capitalize;
+}
+
+.emp-payroll{
+    color: #42515F;
+}
