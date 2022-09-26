@@ -95,10 +95,11 @@ body{
 
 .input{
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    /* resize: vertical; */
+    height: 50px;
+}
+
+.gender label{
+    margin: 0 15px 0 0;
 }
 
 .profile-radio-content{
@@ -115,7 +116,19 @@ body{
 .profile {
     width: 40px;
     border-radius: 50%;
-    margin-left: 12px;
+}
+
+.profile-radio-content label{
+    margin: 0 15px 0 0;
+}
+
+.checkbox-text {
+    margin: auto 10px auto auto;
+}
+
+.checkbox {
+    width: 1rem;
+    height: 1rem;
 }
 
 select { 

@@ -80,10 +80,16 @@ body{
     background-color: #82a70c;
     border:  none;
     border-radius: 5px;
-    padding: 5px 18px;
+    padding: 5px 8px;
     outline: none;
     cursor: pointer;
     text-decoration: none;
+}
+
+.add-icon{
+    position: relative;
+    top: 4px;
+    margin-right: 5px;
 }
 
 .table-main {
