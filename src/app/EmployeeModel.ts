@@ -3,17 +3,15 @@ export class EmployeeModel{
     name:String = "";
     department :String[] = [];
     profilePic:String = "";
-    email:String = "";
     gender:String = "";
     salary:number = 0;
     startDate:Date;
     notes:String = "";
 
-    constructor(name:String, department:String[], profilePic:String, email:String, gender:String, salary:number, startDate:Date, notes:String){
+    constructor(name:String, department:String[], profilePic:String, gender:String, salary:number, startDate:Date, notes:String){
         this.name=name;
         this.department=department;
         this.profilePic=profilePic;
-        this.email=email;
         this.gender=gender;
         this.salary=salary;
         this.startDate=startDate;

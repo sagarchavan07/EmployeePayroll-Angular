@@ -52,8 +52,7 @@ body{
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin: 0 auto;
-    padding-bottom: 25px;
+    margin: 0 auto 25px;
 } 
 
 .emp-details-text {
@@ -73,6 +72,22 @@ body{
     display: inline-block;
 }
 
+.search-add-button{
+    display: flex;
+    align-content: space-between;
+}
+.search-button{
+    background-color: #FFFFFF;
+    border: none;
+    width: 50px;
+    border-radius: 15px;
+    margin: auto 15px auto;
+}
+
+.search-icon{
+    margin: 5px auto 0;
+}
+
 .add-button {
     font: normal normal normal 22px/29px Roboto;
     letter-spacing: 0px;
@@ -80,7 +95,6 @@ body{
     background-color: #82a70c;
     border:  none;
     border-radius: 5px;
-    padding: 5px 8px;
     outline: none;
     cursor: pointer;
     text-decoration: none;
@@ -108,7 +122,6 @@ body{
 td, th{
     text-align: left;
     padding: 5px 8px;
-    /* border: 1px solid #ddd; */
 }
 
 th {
@@ -147,6 +160,12 @@ td img {
     cursor: pointer;
 }
 
+.action-icons{
+    color: #658292;
+    display: flex;
+    justify-content: space-around;
+}
+
 .dept-label {
     background-color: #e9fea5;
     border-radius: 40%;
@@ -157,4 +176,21 @@ td img {
     display: inline-block;
     font-weight: 300;
     margin-bottom: 8px;
+}
+
+.emp-department{
+    display: flex;
+    flex-direction: row;
+    color: #3D3D3D;
+}
+.emp-department-div{
+    background-color: #E9FEA5;
+    border-radius: 13px;
+    margin: auto 5px auto;
+}
+.emp-department-text{
+    padding: 10px 10px 10px;
+    margin: 0 5px 0;
+    font-size: 16px;
+    text-align: center;
 }
