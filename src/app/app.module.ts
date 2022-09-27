@@ -8,15 +8,16 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormComponent } from './form/form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatInputModule} from '@angular/material/input';
-import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
-import {MatSliderModule} from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatNativeDateModule, MatRippleModule } from '@angular/material/core';
+import { MatSliderModule } from '@angular/material/slider';
 import { FormsModule } from '@angular/forms';
-import {MatSelectModule} from '@angular/material/select';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatSelectModule,
     MatRadioModule,
     MatCheckboxModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {  ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from '../employee.service';
-import {  EmployeeModel } from '../EmployeeModel';
+import { EmployeeModel } from '../EmployeeModel';
 
 @Component({
   selector: 'app-form',
@@ -10,42 +10,55 @@ import {  EmployeeModel } from '../EmployeeModel';
 })
 export class FormComponent implements OnInit {
 
-  // constructor(private router: Router) { }
-  constructor(private router: Router, private service:EmployeeService, private route: ActivatedRoute) { }
+  id: any = this.route.snapshot.paramMap.get("id");
+
+  employee: EmployeeModel = new EmployeeModel("", [], "", "", 0, new Date, "");
+
+  constructor(private router: Router, private service: EmployeeService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    if(this.id != null){
+      this.service.getEmployeeById(this.id).subscribe((responce) =>{
+        this.employee = responce;
+        console.log("update employee ",responce);
+      });
+    }
   }
 
-  onCancel=  () => {
+  onCancel = () => {
     this.router.navigateByUrl('/dashboard');
   };
 
-  employee: EmployeeModel = new EmployeeModel("",[], "","","", 0, new Date, "");
-
-  addEmployee(){
+  addEmployee() {
     this.employee.department = this.getselectedValues(".checkbox");
     console.log("running addEmployee method", this.employee);
-    // this.service.insertEmployee(employee).subscribe((data: any) => {
-    //   this.router.navigate(["dashboard"]);
-    // } );
+    this.service.insertEmployee(this.employee).subscribe((data: any) => {
+      this.router.navigate(["dashboard"]);
+    });
   }
 
-  // updateSalaryRangeValue($event: any){
-  //   const sliderValue = document.getElementById("salary-value");
-  //   if(sliderValue != null)
-  //     sliderValue.innerHTML = $event.value;
-  //     this.employee.salary = $event.value;
-  // }
+  updateEmployee(){
+    this.employee.department = this.getselectedValues(".checkbox");
+    console.log("running updateEmployee method", this.employee);
+    this.service.updateEmployee(this.employee,this.id).subscribe((data: any) => {
+      this.router.navigate(["dashboard"]);
+    });
+  }
 
-  getselectedValues(propertyValue:any){
+  getselectedValues(propertyValue: any) {
     let allItems = document.querySelectorAll(propertyValue);
-    let selectedItems:any = [];
+    let selectedItems: any = [];
     allItems.forEach(item => {
-        if (item.checked) {
-            selectedItems.push(item.value);
-        }
+      if (item.checked) {
+        selectedItems.push(item.value);
+      }
     });
     return selectedItems;
+  }
+
+
+  resetForm(){
+    this.employee= new EmployeeModel("", [], "", "", 0, new Date, "");
   }
 
 }
