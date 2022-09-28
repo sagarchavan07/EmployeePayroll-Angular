@@ -58,15 +58,10 @@
     <div class="row-content">
       <label class="label text" for="department">Department</label>
       <div>
-        <span>
-          <input class="checkbox" type="checkbox" id="hr" name="department" value="HR" />
-          <label class="text checkbox-text" for="hr">HR</label>
-        </span>
-        <span>
-          <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales" />
-          <label class="text checkbox-text" for="sales">Sales</label>
-        </span>
-          
+        <input class="checkbox" type="checkbox" id="hr" name="department" value="HR" />
+        <label class="text checkbox-text" for="hr">HR</label>
+        <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales" />
+        <label class="text checkbox-text" for="sales">Sales</label>
         <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance" />
         <label class="text checkbox-text" for="finance">Finance</label>
         <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer" />
@@ -127,8 +122,10 @@
         Cancel
       </button>
       <div class="submit—reset">
-        <button mat-raised-button class="button submitButton" id="submitButton" (click)="addEmployee()" *ngIf="this.id == null">Submit</button>
-        <button mat-raised-button class="button submitButton" id="submitButton" (click)="updateEmployee()" *ngIf="this.id != null">Update</button>
+        <button mat-raised-button class="button submitButton" id="submitButton" (click)="addEmployee()"
+          *ngIf="this.id == null">Submit</button>
+        <button mat-raised-button class="button submitButton" id="submitButton" (click)="updateEmployee()"
+          *ngIf="this.id != null">Update</button>
         <button mat-raised-button class="button resetButton" (click)="resetForm()">Reset</button>
       </div>
     </div>

@@ -52,11 +52,11 @@ body{
     justify-content: space-between;
     align-items: center;
     width: 80%;
-    margin: 0 auto 25px;
+    margin: 0 auto 20px;
 } 
 
 .emp-details-text {
-    font: normal normal bold 24px/25px Roboto;
+    font: normal normal bold 22px Roboto;
     letter-spacing: 0px;
     color: #42515f;
     opacity: 1;
@@ -89,7 +89,7 @@ body{
 }
 
 .add-button {
-    font: normal normal normal 22px/29px Roboto;
+    font: normal normal normal 18px Roboto;
     letter-spacing: 0px;
     color: #ffff;
     background-color: #82a70c;
@@ -98,11 +98,15 @@ body{
     outline: none;
     cursor: pointer;
     text-decoration: none;
+    display: flex;
+}
+.add-button-text{
+    margin: auto 10px auto auto;
 }
 
 .add-icon{
     position: relative;
-    top: 4px;
+    margin: auto 10px auto 0px;
     margin-right: 5px;
 }
 

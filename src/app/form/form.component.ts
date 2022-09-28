@@ -12,15 +12,26 @@ export class FormComponent implements OnInit {
 
   id: any = this.route.snapshot.paramMap.get("id");
 
-  employee: EmployeeModel = new EmployeeModel("", [], "", "", 0, new Date, "");
+  // employee: EmployeeModel = new EmployeeModel("", [], "", "", 0, new Date, "");
+
+  employee: EmployeeModel ={
+    'name': "",
+    'department': [],
+    'profilePic': "",
+    'gender': "",
+    'salary': 0,
+    'startDate': null,
+    'notes': "",
+  };
 
   constructor(private router: Router, private service: EmployeeService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    if(this.id != null){
-      this.service.getEmployeeById(this.id).subscribe((responce) =>{
-        this.employee = responce;
-        console.log("update employee ",responce);
+    if (this.id != null) {
+      this.service.getEmployeeById(this.id).subscribe((responce) => {
+        this.employee = responce.data;
+        console.log(responce);
+        this.showSlectedDepartments(this.employee.department);
       });
     }
   }
@@ -30,22 +41,22 @@ export class FormComponent implements OnInit {
   };
 
   addEmployee() {
-    this.employee.department = this.getselectedValues(".checkbox");
+    this.employee.department = this.getSelectedValues(".checkbox");
     console.log("running addEmployee method", this.employee);
     this.service.insertEmployee(this.employee).subscribe((data: any) => {
       this.router.navigate(["dashboard"]);
     });
   }
 
-  updateEmployee(){
-    this.employee.department = this.getselectedValues(".checkbox");
+  updateEmployee() {
+    this.employee.department = this.getSelectedValues(".checkbox");
     console.log("running updateEmployee method", this.employee);
-    this.service.updateEmployee(this.employee,this.id).subscribe((data: any) => {
+    this.service.updateEmployee(this.employee, this.id).subscribe((data: any) => {
       this.router.navigate(["dashboard"]);
     });
   }
 
-  getselectedValues(propertyValue: any) {
+  getSelectedValues(propertyValue: any) {
     let allItems = document.querySelectorAll(propertyValue);
     let selectedItems: any = [];
     allItems.forEach(item => {
@@ -56,9 +67,31 @@ export class FormComponent implements OnInit {
     return selectedItems;
   }
 
+  showSlectedDepartments(selectedItems: any) {
+    let allItems = document.querySelectorAll(".checkbox");
+    allItems.forEach((item: any) => {
+      item.checked = false;
+    });
+    selectedItems.forEach((selectedItem: any) => {
+      allItems.forEach((item: any) => {
+        if (item.value == selectedItem) {
+          item.checked = true;
+        }
+      });
+    })
+  }
 
-  resetForm(){
-    this.employee= new EmployeeModel("", [], "", "", 0, new Date, "");
+  resetForm() {
+    this.employee = {
+      'name': "",
+      'department': [],
+      'profilePic': "",
+      'gender': "",
+      'salary': 0,
+      'startDate': null,
+      'notes': "",
+    };
+    this.showSlectedDepartments(["test"]);
   }
 
 }
