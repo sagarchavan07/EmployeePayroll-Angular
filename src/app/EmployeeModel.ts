@@ -1,3 +1,4 @@
+type Nullable<T> = T | null;
 
 export class EmployeeModel{
     name:String = "";
@@ -5,7 +6,7 @@ export class EmployeeModel{
     profilePic:String = "";
     gender:String = "";
     salary:number = 0;
-    startDate:Date;
+    startDate:Nullable<Date>;
     notes:String = "";
 
     constructor(name:String, department:String[], profilePic:String, gender:String, salary:number, startDate:Date, notes:String){

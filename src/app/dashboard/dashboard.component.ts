@@ -33,14 +33,14 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  deleteEmployee(index: number) {
-    this.service.deleteEmployeeById(this.allEmployees[index].id).subscribe((response) => {
+  deleteEmployee(id: number) {
+    this.service.deleteEmployeeById(id).subscribe((response) => {
       alert("deleted employee " + response.data);
       this.ngOnInit();
     })
   }
 
-  editEmployee(index: number) {
-    this.router.navigate(['update', this.allEmployees[index].id]);
+  editEmployee(id: number) {
+    this.router.navigate(['update', id]);
   }
 }

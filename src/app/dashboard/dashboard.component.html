@@ -10,7 +10,7 @@
       </button>
       <button class="add-button" (click)="btnClick()">
         <mat-icon class="add-icon">add</mat-icon>
-        <span>Add User</span>
+        <span class="add-button-text">Add User</span>
       </button>
     </div>
   </div>
@@ -39,14 +39,14 @@
             <div class="emp-department-div" *ngFor="let empDepartment of this.employee.department">
               <span class="emp-department-text">{{empDepartment}}</span>
             </div>
-          </div>          
+          </div>
         </td>
         <td>₹ {{ employee.salary }}</td>
         <td>{{ employee.startDate | date: 'mediumDate' }}</td>
         <td>
           <div class="action-icons">
-            <mat-icon class="delete-icon" (click)="deleteEmployee(i)">delete</mat-icon>
-            <mat-icon class="edit-icon" (click)="editEmployee(i)">edit</mat-icon>
+            <mat-icon class="delete-icon" (click)="deleteEmployee(employee.id)">delete</mat-icon>
+            <mat-icon class="edit-icon" (click)="editEmployee(employee.id)">edit</mat-icon>
           </div>
       </tr>
     </table>
