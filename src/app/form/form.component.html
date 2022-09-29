@@ -56,7 +56,7 @@
     </div>
 
     <div class="row-content">
-      <label class="label text" for="department">Department</label>
+      <label class="label text departments" for="department">Department</label>
       <div>
         <input class="checkbox" type="checkbox" id="hr" name="department" value="HR" />
         <label class="text checkbox-text" for="hr">HR</label>
@@ -65,16 +65,16 @@
         <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance" />
         <label class="text checkbox-text" for="finance">Finance</label>
         <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer" />
-        <label class="text checkbox-text" for="engineer">Engineer</label>
+        <label  for="engineer">Engineer</label>
         <input class="checkbox" type="checkbox" id="others" name="department" value="Others" />
         <label class="text checkbox-text" for="others">Others</label>
 
         <!-- <section class="checkbox-departments" name="department">
-            <mat-checkbox class="checkbox" name="department" value="HR">HR</mat-checkbox>
-            <mat-checkbox class="checkbox" name="department" value="Sales">Sales</mat-checkbox>
-            <mat-checkbox class="checkbox" name="department" value="Finance">Finance</mat-checkbox>
-            <mat-checkbox class="checkbox" name="department" value="Engineer">Engineer</mat-checkbox>
-            <mat-checkbox class="checkbox" name="department" value="Engineer">Others</mat-checkbox>
+            <mat-checkbox class="checkbox" name="department" value="HR" [(ngModel)]="this.departmentList.HR">HR</mat-checkbox>
+            <mat-checkbox class="checkbox" name="department" value="Sales" [(ngModel)]="this.departmentList.Sales">Sales</mat-checkbox>
+            <mat-checkbox class="checkbox" name="department" value="Finance" [(ngModel)]="this.departmentList.Finance">Finance</mat-checkbox>
+            <mat-checkbox class="checkbox" name="department" value="Engineer" [(ngModel)]="this.departmentList.Engineer">Engineer</mat-checkbox>
+            <mat-checkbox class="checkbox" name="department" value="Others" [(ngModel)]="this.departmentList.Others">Others</mat-checkbox>
         </section> -->
       </div>
     </div>
