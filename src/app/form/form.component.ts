@@ -14,7 +14,7 @@ export class FormComponent implements OnInit {
 
   // employee: EmployeeModel = new EmployeeModel("", [], "", "", 0, new Date, "");
 
-  employee: EmployeeModel ={
+  employee: EmployeeModel = {
     'name': "",
     'department': [],
     'profilePic': "",
@@ -41,7 +41,7 @@ export class FormComponent implements OnInit {
   };
 
   addEmployee() {
-    this.employee.department = this.getSelectedValues(".checkbox");
+    this.employee.department = this.getSelectedDepartments();
     console.log("running addEmployee method", this.employee);
     this.service.insertEmployee(this.employee).subscribe((data: any) => {
       this.router.navigate(["dashboard"]);
@@ -49,17 +49,17 @@ export class FormComponent implements OnInit {
   }
 
   updateEmployee() {
-    this.employee.department = this.getSelectedValues(".checkbox");
+    this.employee.department = this.getSelectedDepartments();
     console.log("running updateEmployee method", this.employee);
     this.service.updateEmployee(this.employee, this.id).subscribe((data: any) => {
       this.router.navigate(["dashboard"]);
     });
   }
 
-  getSelectedValues(propertyValue: any) {
-    let allItems = document.querySelectorAll(propertyValue);
+  getSelectedDepartments() {
+    let allItems = document.querySelectorAll(".checkbox");
     let selectedItems: any = [];
-    allItems.forEach(item => {
+    allItems.forEach((item: any) => {
       if (item.checked) {
         selectedItems.push(item.value);
       }
@@ -91,7 +91,6 @@ export class FormComponent implements OnInit {
       'startDate': null,
       'notes': "",
     };
-    this.showSlectedDepartments(["test"]);
+    this.showSlectedDepartments([""]);
   }
-
 }
